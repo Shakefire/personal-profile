@@ -1,0 +1,310 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 20px rgba(80, 0, 202, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(80, 0, 202, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 20px rgba(80, 0, 202, 0.1);
+  }
+}
+
+.contact_wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 80px 60px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 30px;
+  backdrop-filter: blur(15px);
+  animation: fadeInUp 0.8s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+
+  /* Decorative glow blob */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(80, 0, 202, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+.contact-left {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+
+  h1 {
+    font-size: 3.8rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 0;
+    /* Vibrant Gradient Heading */
+    background: linear-gradient(135deg, #ffffff 0%, #a287f4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 480px;
+    font-weight: 400;
+  }
+
+  .contact-img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    display: block;
+    margin-top: auto;
+    border-radius: 20px;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 20px 40px rgba(80, 0, 202, 0.25));
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+      transform: scale(1.05) translateY(-15px) rotate(1deg);
+      filter: drop-shadow(0 30px 60px rgba(80, 0, 202, 0.4));
+    }
+  }
+}
+
+.contact-right {
+  flex: 1.2;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .MuiTextField-root {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(162, 135, 244, 0.1);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(162, 135, 244, 0.4);
+      transform: translateY(-2px);
+    }
+
+    &.Mui-focused {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      border-color: #a287f4;
+      box-shadow: 0 0 20px rgba(80, 0, 202, 0.15);
+    }
+
+    .MuiOutlinedInput-root {
+      & fieldset {
+        border: none;
+      }
+
+      &.Mui-focused fieldset {
+        border: none;
+      }
+    }
+
+    .MuiInputBase-input {
+      padding: 22px;
+      color: white;
+      font-size: 1.1rem;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+        opacity: 1;
+      }
+    }
+
+    .MuiInputLabel-root {
+      color: rgba(255, 255, 255, 0.5);
+      padding-left: 8px;
+      font-weight: 500;
+
+      &.Mui-focused {
+        color: #a287f4;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .send-button {
+    /* Premium Gradient Button */
+    background: linear-gradient(135deg, #5000ca 0%, #a287f4 100%) !important;
+    color: white !important;
+    padding: 18px 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    align-self: flex-start;
+    margin-top: 30px;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 10px 30px rgba(80, 0, 202, 0.3);
+    border: none;
+
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(80, 0, 202, 0.5);
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Light mode overrides - More Vibrant */
+.light-mode {
+  .contact_wrapper {
+    background: #ffffff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+
+    &::before {
+      background: radial-gradient(circle, rgba(80, 0, 202, 0.08) 0%, transparent 70%);
+    }
+  }
+
+  .contact-left {
+    h1 {
+      background: linear-gradient(135deg, #1a1a1a 0%, #5000ca 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: #444;
+    }
+
+    .contact-img {
+      mix-blend-mode: multiply;
+      filter: none;
+    }
+  }
+
+  .contact-right {
+    background: #f8f9fa;
+    border-color: #e9ecef;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .contact-form .MuiTextField-root {
+    background-color: #fcfcfc !important;
+    border: 1px solid #dee2e6;
+
+    .MuiInputBase-input {
+      color: #1a1a1a;
+    }
+
+    .MuiInputLabel-root {
+      color: #495057;
+    }
+
+    &.Mui-focused {
+      background-color: #ffffff !important;
+      border-color: #5000ca;
+      box-shadow: 0 0 15px rgba(80, 0, 202, 0.1);
+    }
+  }
+
+  .contact-form .send-button {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%) !important;
+
+    &:hover {
+      background: linear-gradient(135deg, #5000ca 0%, #7d33ff 100%) !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contact_wrapper {
+    gap: 50px;
+    padding: 60px 40px;
+  }
+
+  .contact-left h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contact_wrapper {
+    flex-direction: column;
+    padding: 60px 30px;
+    gap: 60px;
+  }
+
+  .contact-left {
+    text-align: center;
+    align-items: center;
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+    }
+
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.15rem;
+    }
+
+    .contact-img {
+      max-width: 360px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .contact-right {
+    padding: 30px 20px;
+  }
+
+  .contact-form .send-button {
+    align-self: center;
+    width: 100%;
+    max-width: 340px;
+  }
+}
