@@ -8,7 +8,7 @@ function Main() {
 
   return (
     <div className="container">
-      <div className="about-section">
+      <header className="about-section">
         <div className="image-wrapper">
           <img src={profileImg} alt="Avatar" />
         </div>
@@ -25,7 +25,7 @@ function Main() {
             <a href="https://www.linkedin.com/in/generallshakefire/" target="_blank" rel="noreferrer"><LinkedInIcon /></a>
           </div>
         </div>
-      </div>
+      </header>
     </div>
   );
 }
