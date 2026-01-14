@@ -30,7 +30,7 @@ function Contact() {
 
     if (name !== '' && email !== '' && subject !== '' && message !== '') {
       try {
-        const response = await fetch('http://localhost:5000/api/send-email', {
+        const response = await fetch('/api/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
