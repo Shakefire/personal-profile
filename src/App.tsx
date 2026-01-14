@@ -13,7 +13,7 @@ import './index.scss';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function App() {
-    const [mode, setMode] = useState<string>('dark');
+    const [mode] = useState<string>('dark');
 
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
