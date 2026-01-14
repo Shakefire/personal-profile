@@ -5,7 +5,6 @@ import {
   Expertise,
   Project,
   Contact,
-  Navigation,
   Footer,
 } from "./components";
 import FadeIn from './components/FadeIn';
@@ -15,14 +14,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function App() {
     const [mode, setMode] = useState<string>('dark');
-
-    const handleModeChange = () => {
-        if (mode === 'dark') {
-            setMode('light');
-        } else {
-            setMode('dark');
-        }
-    }
 
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
@@ -39,7 +30,6 @@ function App() {
                 <meta property="og:type" content="website" />
                 {/* <meta property="og:image" content="%PUBLIC_URL%/og-image.png" /> */} 
             </Helmet>
-            <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
             <FadeIn transitionDuration={700}>
                 <Main/>
                 <Expertise/>
