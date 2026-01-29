@@ -47,8 +47,8 @@ function Project() {
                     <p>Developed a CNN-based model for identifying and classifying diseases in rice crops from terminal leaf images.</p>
                 </div>
                 <div className="project">
-                    <a href="https://github.com/Shakefire/Aladgold-Dynamic" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%" /></a>
-                    <a href="https://github.com/Shakefire/Aladgold-Dynamic" target="_blank" rel="noreferrer"><h2>Aladgold Dynamic</h2></a>
+                    <a href="https://aladgolddynamic.com.ng" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%" /></a>
+                    <a href="https://aladgolddynamic.com.ng" target="_blank" rel="noreferrer"><h2>Aladgold Dynamic</h2></a>
                     <p>A dynamic web platform designed for scalability and modern user experience, utilizing backend optimization techniques.</p>
                 </div>
                 <div className="project">
