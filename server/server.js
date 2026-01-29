@@ -23,7 +23,7 @@ app.post('/api/send-email', async (req, res) => {
     try {
         const data = await resend.emails.send({
             from: process.env.RESEND_FROM_EMAIL || 'Portfolio Contact <onboarding@resend.dev>',
-            to: [process.env.RESEND_TO_EMAIL || 'mkabirhassan11@gmail.com'], // Defaulting to the one I guessed, but user should change it.
+            to: [process.env.RESEND_TO_EMAIL || 'muhammadkabirhassan.infinity@gmail.com'], // Defaulting to the one I guessed, but user should change it.
             reply_to: email,
             subject: `Portfolio Contact: ${subject}`,
             html: `
